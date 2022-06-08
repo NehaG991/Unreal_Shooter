@@ -5,6 +5,7 @@
 #include "MainCharacter.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 
 void UMainAnimInstance::NativeInitializeAnimation()
 {
@@ -32,6 +33,14 @@ void UMainAnimInstance::UpdateAnimationProperties()
 		FVector LateralSpeed = FVector(Speed.X, Speed.Y, 0.0f);
 		MovementSpeed = LateralSpeed.Size();
 		bIsInAir = Pawn->GetMovementComponent()->IsFalling();
+
+		// Setting yaw, pitch, and roll
+		FRotator Rotation = Pawn->GetActorRotation();
+		FRotator BaseAnimRotation = Pawn->GetBaseAimRotation();
+		//FRotator Delta = UKismetMathLibrary::NormalizedDeltaRotator(Rotation, BaseAnimRotation);
+		FRotator Delta = UKismetMathLibrary::NormalizedDeltaRotator(BaseAnimRotation, Rotation);
+		UKismetMathLibrary::BreakRotator(Delta, Roll, Pitch, Yaw);
+
 
 		if (Main == nullptr)
 		{

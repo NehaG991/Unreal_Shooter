@@ -35,4 +35,14 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
 		class AMainCharacter* Main;
 
+	// CUSTOM STUFF NOT IN BOOK
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		float Yaw;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		float Pitch;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		float Roll;
+
 };
