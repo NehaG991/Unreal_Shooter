@@ -102,20 +102,12 @@ void AMainCharacter::Tick(float DeltaTime)
 void AMainCharacter::toggleZoom()
 {
 	bAiming = !bAiming;
-	UE_LOG(LogTemp, Warning, TEXT("Aim Toggle Value: %s"), (bAiming ? TEXT("true") : TEXT("false")));
 	if (bAiming == true)
 	{
-		//bUseControllerRotationPitch = true;
-		//bUseControllerRotationYaw = true;
-		//bUseControllerRotationRoll = true;
-
 		Cameraboom->TargetArmLength = 100.0f;
 	}
 	else 
 	{
-		//bUseControllerRotationPitch = false;
-		//bUseControllerRotationYaw = false;
-		//bUseControllerRotationRoll = false;
 		Cameraboom->TargetArmLength = 300.0f;
 	}
 }

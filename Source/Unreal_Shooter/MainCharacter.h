@@ -48,15 +48,4 @@ public:
 	// Changes bool if player is aiming
 	void toggleZoom();
 
-	// Function that handles firing bullets
-	void Shoot();
-
-	// Gun muzzle offset from the camera location
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-		FVector MuzzleOffset;
-
-	// Projectile class to spawn
-	UPROPERTY(EditDefaultsOnly, Category = Projectile)
-		TSubclassOf<class ABullet> ProjectileClass;
-
 };
