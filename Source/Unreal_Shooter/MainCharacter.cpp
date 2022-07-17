@@ -125,7 +125,7 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 	// CUSTOM
 	// Toggles zoom if player is pressing right mouse button
-	PlayerInputComponent->BindAction("Aim", IE_Pressed, this, &AMainCharacter::toggleZoom);
-	PlayerInputComponent->BindAction("Aim", IE_Released, this, &AMainCharacter::toggleZoom);
+	//PlayerInputComponent->BindAction("Aim", IE_Pressed, this, &AMainCharacter::toggleZoom);
+	//PlayerInputComponent->BindAction("Aim", IE_Released, this, &AMainCharacter::toggleZoom);
 }
 
