@@ -13,7 +13,7 @@ UCLASS()
 class UNREAL_SHOOTER_API AEnemyController : public AAIController
 {
 	GENERATED_BODY()
-	
+
 public:
 	AEnemyController();
 

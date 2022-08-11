@@ -35,6 +35,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
 		class AMainCharacter* Main;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+		class AEnemy* Enemy;
+
 	// CUSTOM STUFF NOT IN BOOK
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
 		float Yaw;

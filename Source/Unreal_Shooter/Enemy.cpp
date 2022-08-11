@@ -2,6 +2,10 @@
 
 
 #include "Enemy.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "BehaviorTree/BehaviorTree.h"
+#include "EnemyController.h"
+#include "BehaviorTree/BlackboardComponent.h"
 
 // Sets default values
 AEnemy::AEnemy()
@@ -15,7 +19,12 @@ AEnemy::AEnemy()
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	FVector Location = GetActorLocation();
+
+	EnemyController = Cast<AEnemyController>(GetController());
+
+	EnemyController->GetBlackboard()->SetValueAsVector(TEXT("PatrolPoint1"), PatrolPoint1 + Location);
+	EnemyController->GetBlackboard()->SetValueAsVector(TEXT("PatrolPoint2"), PatrolPoint2 + Location);
 }
 
 // Called every frame
@@ -30,5 +39,10 @@ void AEnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void AEnemy::SetIsAccelerating(bool bAccelerating)
+{
+	bIsAccelerating = bAccelerating;
 }
 

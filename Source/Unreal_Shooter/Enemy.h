@@ -20,6 +20,20 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Pawn")
 		class UBehaviorTree* BehaviorTree;
 
+	UPROPERTY(EditAnywhere, Category = "BehaviorTree", Meta = (MakeEditWidget = true))
+		FVector PatrolPoint1;
+
+	UPROPERTY(EditAnywhere, Category = "BehaviorTree", Meta = (MakeEditWidget = true))
+		FVector PatrolPoint2;
+
+	class AEnemyController* EnemyController;
+
+	UPROPERTY(BlueprintReadOnly)
+		bool bIsAccelerating;
+
+	UFUNCTION(BlueprintCallable)
+		void SetIsAccelerating(bool bAccelerating);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

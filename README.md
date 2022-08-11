@@ -3,6 +3,8 @@ CURRENTLY WORKING
 
 3rd Person Shooter using UE4 to build UE4 skills
 
+Using book: Unreal Engine C++ the Ultimate Develper's Handbook for .cpp & .h files
+
 Character Model From:<br />
   Unreal Market: Sci-Fi Character 08 (Renegade)<br />
 <br />
