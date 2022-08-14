@@ -20,11 +20,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Pawn")
 		class UBehaviorTree* BehaviorTree;
 
-	UPROPERTY(EditAnywhere, Category = "BehaviorTree", Meta = (MakeEditWidget = true))
-		FVector PatrolPoint1;
+	//UPROPERTY(EditAnywhere, Category = "BehaviorTree", Meta = (MakeEditWidget = true))
+	//	FVector PatrolPoint1;
 
-	UPROPERTY(EditAnywhere, Category = "BehaviorTree", Meta = (MakeEditWidget = true))
-		FVector PatrolPoint2;
+	//UPROPERTY(EditAnywhere, Category = "BehaviorTree", Meta = (MakeEditWidget = true))
+	//	FVector PatrolPoint2;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BehaviorTree")
 	class AEnemyController* EnemyController;
