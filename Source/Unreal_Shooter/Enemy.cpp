@@ -33,10 +33,10 @@ void AEnemy::BeginPlay()
 	EnemyController->GetBlackboard()->SetValueAsVector(TEXT("PatrolPoint1"), PatrolPoint1 + Location);
 	EnemyController->GetBlackboard()->SetValueAsVector(TEXT("PatrolPoint2"), PatrolPoint2 + Location);
 
-	AgroSphere->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::AgroSphereBeginOverlap);
-	AgroSphere->OnComponentEndOverlap.AddDynamic(this, &AEnemy::AgroSphereEndOverlap);
-	AttackSphere->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::AttackSphereBeginOverlap);
-	AttackSphere->OnComponentEndOverlap.AddDynamic(this, &AEnemy::AttackSphereEndOverlap);
+	//AgroSphere->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::AgroSphereBeginOverlap);
+	//AgroSphere->OnComponentEndOverlap.AddDynamic(this, &AEnemy::AgroSphereEndOverlap);
+	//AttackSphere->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::AttackSphereBeginOverlap);
+	//AttackSphere->OnComponentEndOverlap.AddDynamic(this, &AEnemy::AttackSphereEndOverlap);
 }
 
 // Called every frame
@@ -60,74 +60,74 @@ void AEnemy::SetIsAccelerating(bool bAccelerating)
 }
 
 // Collision Functions
-void AEnemy::AgroSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
-{
-	if (OtherActor)
-	{
-		AMainCharacter* Main = Cast<AMainCharacter>(OtherActor);
-
-		if (Main)
-		{
-			if (EnemyController == nullptr)
-			{
-				EnemyController = Cast<AEnemyController>(GetController());
-			}
-			
-			EnemyController->GetBlackboard()->SetValueAsObject(TEXT("TargetActor"), Main);
-		}
-	}
-}
-
-void AEnemy::AgroSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	if (OtherActor)
-	{
-		AMainCharacter* Main = Cast<AMainCharacter>(OtherActor);
-
-		if (Main)
-		{
-			if (EnemyController == nullptr)
-			{
-				EnemyController = Cast<AEnemyController>(GetController());
-			}
-
-			EnemyController->GetBlackboard()->SetValueAsObject(TEXT("TargetActor"), nullptr);
-		}
-	}
-}
-
-void AEnemy::AttackSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-	if (OtherActor)
-	{
-		AMainCharacter* Main = Cast<AMainCharacter>(OtherActor);
-
-		if (Main)
-		{
-			if (EnemyController == nullptr)
-			{
-				EnemyController = Cast<AEnemyController>(GetController());
-			}
-
-			EnemyController->GetBlackboard()->SetValueAsBool(TEXT("InAttackRange"), true);
-		}
-	}
-}
-
-void AEnemy::AttackSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	if (OtherActor)
-	{
-		AMainCharacter* Main = Cast<AMainCharacter>(OtherActor);
-
-		if (Main)
-		{
-			if (EnemyController == nullptr)
-			{
-				EnemyController = Cast<AEnemyController>(GetController());
-			}
-
-			EnemyController->GetBlackboard()->SetValueAsBool(TEXT("InAttackRange"), false);
-		}
-	}
-}
+//void AEnemy::AgroSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+//{
+//	if (OtherActor)
+//	{
+//		AMainCharacter* Main = Cast<AMainCharacter>(OtherActor);
+//
+//		if (Main)
+//		{
+//			if (EnemyController == nullptr)
+//			{
+//				EnemyController = Cast<AEnemyController>(GetController());
+//			}
+//			
+//			EnemyController->GetBlackboard()->SetValueAsObject(TEXT("TargetActor"), Main);
+//		}
+//	}
+//}
+//
+//void AEnemy::AgroSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+//{
+//	if (OtherActor)
+//	{
+//		AMainCharacter* Main = Cast<AMainCharacter>(OtherActor);
+//
+//		if (Main)
+//		{
+//			if (EnemyController == nullptr)
+//			{
+//				EnemyController = Cast<AEnemyController>(GetController());
+//			}
+//
+//			EnemyController->GetBlackboard()->SetValueAsObject(TEXT("TargetActor"), nullptr);
+//		}
+//	}
+//}
+//
+//void AEnemy::AttackSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+//{
+//	if (OtherActor)
+//	{
+//		AMainCharacter* Main = Cast<AMainCharacter>(OtherActor);
+//
+//		if (Main)
+//		{
+//			if (EnemyController == nullptr)
+//			{
+//				EnemyController = Cast<AEnemyController>(GetController());
+//			}
+//
+//			EnemyController->GetBlackboard()->SetValueAsBool(TEXT("InAttackRange"), true);
+//		}
+//	}
+//}
+//
+//void AEnemy::AttackSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+//{
+//	if (OtherActor)
+//	{
+//		AMainCharacter* Main = Cast<AMainCharacter>(OtherActor);
+//
+//		if (Main)
+//		{
+//			if (EnemyController == nullptr)
+//			{
+//				EnemyController = Cast<AEnemyController>(GetController());
+//			}
+//
+//			EnemyController->GetBlackboard()->SetValueAsBool(TEXT("InAttackRange"), false);
+//		}
+//	}
+//}
