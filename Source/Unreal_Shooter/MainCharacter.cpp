@@ -98,7 +98,7 @@ void AMainCharacter::Tick(float DeltaTime)
 
 // CUSTOM FUNCTIONS
 
-// Toggles zoom indictor
+// NOT USING - Toggles zoom indictor
 void AMainCharacter::toggleZoom()
 {
 	bAiming = !bAiming;

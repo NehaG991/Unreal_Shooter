@@ -34,6 +34,24 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void SetIsAccelerating(bool bAccelerating);
 
+	UPROPERTY(EditAnywhere, Category = "BehaviorTree")
+		class USphereComponent* AgroSphere;
+
+	UPROPERTY(EditAnywhere, Category = "BehaviorTree")
+		class USphereComponent* AttackSphere;
+
+	UFUNCTION(BlueprintCallable)
+		void AgroSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
+	UFUNCTION(BlueprintCallable)
+		void AgroSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	UFUNCTION(BlueprintCallable)
+		void AttackSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
+	UFUNCTION(BlueprintCallable)
+		void AttackSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

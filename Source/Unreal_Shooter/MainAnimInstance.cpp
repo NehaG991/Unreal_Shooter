@@ -36,6 +36,7 @@ void UMainAnimInstance::UpdateAnimationProperties()
 		MovementSpeed = LateralSpeed.Size();
 		bIsInAir = Pawn->GetMovementComponent()->IsFalling();
 
+		// MY CODE
 		// Setting yaw, pitch, and roll
 		FRotator Rotation = Pawn->GetActorRotation();
 		FRotator BaseAnimRotation = Pawn->GetBaseAimRotation();
