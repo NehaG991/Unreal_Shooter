@@ -1,7 +1,7 @@
 # Unreal_Shooter
 CURRENTLY WORKING
 
-3rd Person Shooter using UE4 to build UE4 skills
+3rd Person Shooter using UE5 to build UE5 skills
 
 Using book: Unreal Engine C++ the Ultimate Develper's Handbook for .cpp & .h files
 
@@ -16,5 +16,7 @@ Animations from:<br />
   Unreal Market: Animation Starter Pack<br />
 <br />
 VFX From:<br />
-  Unreal Market: Infinity Blade Effects<br />
-  
+  Unreal Market: Infinity Blade: Effects<br />
+<br />
+Enemy Assets From:<br />
+  Unreal Market: Infinity Blade: Warriors<br />
