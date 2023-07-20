@@ -20,3 +20,7 @@ VFX From:<br />
 <br />
 Enemy Assets From:<br />
   Unreal Market: Infinity Blade: Warriors<br />
+<br />
+Environment Assets From:<br />
+  Unreal Market: Spaceship Interior<br />
+  Unreal Market: Brutalist Level Kit<br />
